@@ -229,7 +229,7 @@ if (month<10){ //да, код прямо скажу инвалид 1 групп�
  String monthString=String(month);
 monthString.toCharArray(monthstring,3);
   TFTscreen.text(monthstring,59,75);
-TFTscreen.text("0", 53,75);
+TFTscreen.text("0", 59,75);
 }
 if (month>=10)
 {
@@ -337,7 +337,7 @@ void ReadMeteo()
   Pres = bme.readPressure();
     Temp = bme.readTemperature();
     Hum =  bme.readHumidity();
-     Temp = Temp + TempCalOffset;  //с калибровкой
+     Temp = Temp + TempCalOffset;  //с калибровочкой;)
      for (int a = 119 ; a >= 0 ; --a )
 {
 tempArray[a] = tempArray[a - 1];
@@ -359,19 +359,19 @@ gps.read();//  Читаем данные (чтение может занимат
      /* Дата:*/  day=gps.day; month=gps.month; year=gps.year;
      /* Координаты (широта, долгота, высота): */  Lat=gps.latitude; Long=gps.longitude; Alt=gps.altitude;
      /* Спутники (активные/наблюдаемые):          */ SatAct=gps.satellites[GPS_ACTIVE]; SatVis=gps.satellites[GPS_VISIBLE];
-    
-     if (year==24)//вычислять лунное число буду пока так
+    /*
+     if (year==2024)//вычислять лунное число буду пока так
      {
       moonNum=18;
      }
      else
      {
-      moonNum=((year-24)*11)+18;
+      moonNum=((year-2024)*11)+18;
       if (moonNum>=30)
       {
         moonNum=moonNum-30;
      }
-     }
+     }*/
 }
 void GraphTemp()//2 режим - вывод графика температуры
 {
@@ -487,7 +487,7 @@ TFTscreen.line(35, 25, 35, 159);
 for (int a = 40 ; a < 127 ; a++)
 {
 // Преобразовать освещённость в координату Y на экране ЖКИ
-q = map(presArray[a - 40],8520,10850,159,30);
+q = map(presArray[a - 40],852,1085,159,30);
 TFTscreen.point(a,q);
 }
 }

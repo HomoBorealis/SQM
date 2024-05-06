@@ -58,11 +58,11 @@ int hour;//gps
 char hourstring[3];
 int minute;
 char minutestring[3];
-int day=5;
+int day;
 char daystring[3];
-int month=5;
+int month;
 char monthstring[3];
-int year=24;
+int year;
 char yearstring[5];
 double Lat;
 char latstring[8];
