@@ -41,7 +41,7 @@ char humstring[3];
 char luxstring[6];
 int tempArray[120];//массив для записи показаний датчика температуры
 double sqmArray[120];//массив для записи показаний датчика sqm
-float presArray[120];
+double presArray[120];
 char currentString[3];
 volatile int Mode = 0;
 volatile int flag = 0;
@@ -58,11 +58,11 @@ int hour;//gps
 char hourstring[3];
 int minute;
 char minutestring[3];
-int day;
+int day=6;
 char daystring[3];
-int month;
+int month=5;
 char monthstring[3];
-int year;
+int year=24;
 char yearstring[3];
 double Lat;
 char latstring[8];
