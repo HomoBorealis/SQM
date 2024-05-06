@@ -63,7 +63,7 @@ char daystring[3];
 int month;
 char monthstring[3];
 int year;
-char yearstring[5];
+char yearstring[3];
 double Lat;
 char latstring[8];
 double Long;
@@ -76,7 +76,7 @@ int SatVis;
 char satvisstring[3];
 //Луна
 
-int old;//возраст
+int old=22;//возраст
 int moonNum=18;//лунное число
 //char moonstring[3];
 
@@ -120,7 +120,10 @@ tsl.begin();
    DisplGPS();
    ReadSQM();
    DisplSQM();
-   if(mag>=20){//яркость экрана устанавливается сразу после включения и измерения освещённости (Может потом сделать по-другому?)
+    if(mag>=17){//яркость экрана устанавливается сразу после включения и измерения освещённости (Может потом сделать по-другому?)
+   analogWrite(TFTcontrast,40);
+   }
+   if(mag>=20){
    analogWrite(TFTcontrast,25);
    }
 //   sqm.setCalibrationOffset(SqmCalOffset);  // хз пока, надо ли ваще

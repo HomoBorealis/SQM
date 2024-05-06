@@ -229,7 +229,7 @@ if (month<10){ //да, код прямо скажу инвалид 1 групп�
  String monthString=String(month);
 monthString.toCharArray(monthstring,3);
   TFTscreen.text(monthstring,59,75);
-TFTscreen.text("0", 59,75);
+TFTscreen.text("0", 53,75);
 }
 if (month>=10)
 {
@@ -238,21 +238,18 @@ String monthString=String(month);
 monthString.toCharArray(monthstring,3);
   TFTscreen.text(monthstring,53,75);
 }
-String monthString=String(month);
-monthString.toCharArray(monthstring,3);
-  TFTscreen.text(monthstring,53,75);
 TFTscreen.text(".\n", 63,75);
 String yearString=String(year);
-yearString.toCharArray(yearstring,5);
+yearString.toCharArray(yearstring,3);
   TFTscreen.text(yearstring,68,75);
 
 TFTscreen.text("Latitude:\n", 5,85);// выведем широту
   String latString=String(Lat);
-    latString.toCharArray(latstring,10);
+    latString.toCharArray(latstring,8);
   TFTscreen.text(latstring,60,85); 
  TFTscreen.text("Longitude:\n", 5,95);
   String longString=String(Long);
-    longString.toCharArray(longstring,10);
+    longString.toCharArray(longstring,8);
   TFTscreen.text(longstring,65,95);//выведем долготу
  
  TFTscreen.text("Altitude:\n", 5,105);
@@ -372,6 +369,7 @@ gps.read();//  Читаем данные (чтение может занимат
         moonNum=moonNum-30;
      }
      }*/
+     delay(200);
 }
 void GraphTemp()//2 режим - вывод графика температуры
 {
@@ -487,7 +485,7 @@ TFTscreen.line(35, 25, 35, 159);
 for (int a = 40 ; a < 127 ; a++)
 {
 // Преобразовать освещённость в координату Y на экране ЖКИ
-q = map(presArray[a - 40],852,1085,159,30);
+q = map(presArray[a - 40],852.0,1085.0,159,30);
 TFTscreen.point(a,q);
 }
 }
